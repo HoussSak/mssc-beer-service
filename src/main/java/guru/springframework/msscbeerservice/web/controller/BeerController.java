@@ -11,7 +11,7 @@ import java.util.UUID;
 @RestController
 public class BeerController {
     @GetMapping("/{beerId}")
-    public ResponseEntity<BeerDto> getBeerById(UUID beerId) {
+    public ResponseEntity<BeerDto> getBeerById(@PathVariable UUID beerId) {
         //todo impl
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
     }
@@ -19,7 +19,6 @@ public class BeerController {
     public ResponseEntity saveNewBeer (@RequestBody BeerDto beerDto) {
         //todo impl
         return new ResponseEntity(HttpStatus.CREATED);
-
     }
 
     @PutMapping("/{beerId}")
