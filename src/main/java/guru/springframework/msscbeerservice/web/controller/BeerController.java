@@ -1,6 +1,7 @@
 package guru.springframework.msscbeerservice.web.controller;
 
 import guru.springframework.msscbeerservice.web.model.BeerDto;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class BeerController {
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
     }
     @PostMapping
-    public ResponseEntity saveNewBeer (@RequestBody BeerDto beerDto) {
+    public ResponseEntity saveNewBeer (@Valid  @RequestBody BeerDto beerDto) {
         HttpHeaders headers= new HttpHeaders();
         headers.add("Location","hhhh");
         //todo impl
@@ -25,7 +26,7 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity updateNewBeer (@RequestBody BeerDto beerDto,@PathVariable UUID beerId) {
+    public ResponseEntity updateNewBeer (@Valid @RequestBody BeerDto beerDto,@PathVariable UUID beerId) {
         //todo impl
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
