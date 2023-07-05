@@ -1,38 +1,38 @@
 package guru.springframework.msscbeerservice.web.controller;
 
+import guru.springframework.msscbeerservice.services.BeerService;
 import guru.springframework.msscbeerservice.web.model.BeerDto;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
-
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/beer")
 @RestController
 public class BeerController {
+    private final BeerService beerService;
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable UUID beerId) {
-        //todo impl
-        return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
+        return new ResponseEntity<>(beerService.getByUd(beerId),HttpStatus.OK);
     }
     @PostMapping
-    public ResponseEntity saveNewBeer (@Valid  @RequestBody BeerDto beerDto) {
-        HttpHeaders headers= new HttpHeaders();
-        headers.add("Location","hhhh");
-        //todo impl
-        return new ResponseEntity(headers,HttpStatus.CREATED);
+    public ResponseEntity<BeerDto> saveNewBeer (@Valid  @RequestBody BeerDto beerDto) {
+       // HttpHeaders headers= new HttpHeaders();
+       // headers.add("Location","hhhh");
+        return new ResponseEntity<>(beerService.saveNewBeer(beerDto),HttpStatus.CREATED) ;
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity updateNewBeer (@Valid @RequestBody BeerDto beerDto,@PathVariable UUID beerId) {
-        //todo impl
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    public ResponseEntity<BeerDto> updateNewBeer (@Valid @RequestBody BeerDto beerDto,@PathVariable UUID beerId) {
+        return new ResponseEntity<>(beerService.updateBeer(beerId,beerDto),HttpStatus.NO_CONTENT);
     }
 
     @DeleteMapping("/{beerId}")
-    public void deteBeer (@PathVariable UUID beerId) {
-        //todo impl
+    public void deleteBeer (@PathVariable UUID beerId) {
+        beerService.deleteBeerById(beerId);
     }
 }
