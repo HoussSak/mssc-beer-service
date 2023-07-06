@@ -23,8 +23,7 @@ public record BeerDto (@Null UUID id,
         @NotNull
         BeerStyleEnum beerStyle,
         @NotNull
-        @Positive
-        Long upc,
+        String upc,
         @JsonFormat(shape = JsonFormat.Shape.STRING)
         @Positive
         @NotNull

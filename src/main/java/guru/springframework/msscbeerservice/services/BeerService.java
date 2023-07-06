@@ -5,7 +5,7 @@ import guru.springframework.msscbeerservice.web.model.BeerDto;
 import java.util.UUID;
 
 public interface BeerService {
-    BeerDto getByUd(UUID beerId);
+    BeerDto getById(UUID beerId);
 
     BeerDto  saveNewBeer(BeerDto beerDto);
 

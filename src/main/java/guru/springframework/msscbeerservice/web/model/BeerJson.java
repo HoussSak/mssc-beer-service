@@ -38,7 +38,7 @@ public class BeerJson {
     @JsonProperty("lol")
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     private BigDecimal price;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private OffsetDateTime createdDate;
     private OffsetDateTime lastUpdatedDate;
     @JsonSerialize(using = LocalDateSerializer.class)
