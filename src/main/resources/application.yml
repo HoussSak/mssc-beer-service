@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: beer-service
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+
+sfg:
+  brewery:
+    beer-inventory-service-host: http://localhost:8082
+    inventory-user: good
+    inventory-password: beer
+
+spring.cache.jcache.config: classpath:ehcache.xml
+spring.data.jpa.repositories.bootstrap-mode: default
+spring.artemis.user: artemis
+spring.artemis.password: simetraehcapa
+spring.zipkin.enabled: false
+logging.level.guru.springframework: debug

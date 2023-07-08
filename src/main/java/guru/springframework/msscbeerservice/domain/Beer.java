@@ -15,24 +15,27 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "BEER")
 public class Beer {
     @Id
     @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false )
-    private UUID Id;
-    @Version
-    private Long version;
+    private UUID id;
+
+    private String beerName;
+    private String beerStyle;
     @CreationTimestamp
     @Column(updatable = false)
     private Timestamp createdDate;
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
-    private String beerName;
-    private String beerStyle;
-    @Column(unique = true)
-    private String upc;
-    private BigDecimal price;
     private Integer minOnHand;
     private Integer quantityToBrew;
+    private BigDecimal price;
+
+    @Column(unique = true)
+    private String upc;
+    @Version
+    private Long version;
+
 }

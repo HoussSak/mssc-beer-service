@@ -1,0 +1,4 @@
+[source,json,options="nowrap"]
+----
+{"id":null,"version":null,"createdDate":null,"lastModifiedDate":null,"beerName":"heikein","beerStyle":"ALE","upc":"0631234200036","price":"12","quantityOnHand":null}
+----
