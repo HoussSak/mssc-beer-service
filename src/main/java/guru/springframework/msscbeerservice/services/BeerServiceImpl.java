@@ -55,7 +55,6 @@ public class BeerServiceImpl implements BeerService {
         beerRepository.deleteById(String.valueOf(beerId));
     }
     @Cacheable(value = "beerListCache" ,condition = "!#showInventoryOnHand")
-
     @Override
     public BeerPagedList getBeerList(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, Boolean showInventoryOnHand) {
         System.out.println("i was called");
@@ -94,5 +93,14 @@ public class BeerServiceImpl implements BeerService {
                         beerPage.getPageable().getPageSize()),
                 beerPage.getTotalElements());
         return beerPagedList;
+    }
+    @Cacheable(value = "beerUpcCache" ,condition = "!#showInventoryOnHand")
+    @Override
+    public BeerDto getByUpc(String upc, Boolean showInventoryOnHand) {
+        System.out.println("i was called");
+        if (showInventoryOnHand) {
+            return beerMapper.beerToBeerDtoWithInventory(beerRepository.findByUpc(upc).orElseThrow(NotFoundException::new));
+        }
+        return beerMapper.beerToBeerDto(beerRepository.findByUpc(upc).orElseThrow(NotFoundException::new));
     }
 }

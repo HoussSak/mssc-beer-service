@@ -18,6 +18,7 @@ public interface BeerRepository extends PagingAndSortingRepository<Beer, String>
     Page<Beer> findAllByBeerStyle(BeerStyleEnum beerStyle, PageRequest pageRequest);
 
     Optional<Beer> findById(String beerId);
+    Optional<Beer> findByUpc(String upc);
 
     Beer save(Beer beerDtoToBeer);
 
