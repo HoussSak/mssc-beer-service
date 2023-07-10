@@ -16,7 +16,10 @@ sfg:
     inventory-user: good
     inventory-password: beer
 
-spring.cache.jcache.config: classpath:ehcache.xml
+
+spring.cache.type: simple
+spring.cache.cache-names: beerCache, beerUpcCache, beerListCache
+spring.cache.caffeine.spec: maximumSize=1000,expireAfterWrite=7d
 spring.data.jpa.repositories.bootstrap-mode: default
 spring.artemis.user: artemis
 spring.artemis.password: simetraehcapa

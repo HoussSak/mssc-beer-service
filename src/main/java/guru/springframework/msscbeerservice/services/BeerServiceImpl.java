@@ -7,6 +7,8 @@ import guru.springframework.msscbeerservice.web.mappers.BeerMapper;
 import guru.springframework.msscbeerservice.web.model.BeerDto;
 import guru.springframework.msscbeerservice.web.model.BeerPagedList;
 import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -15,7 +17,7 @@ import org.springframework.util.StringUtils;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
+@EnableCaching
 @Service
 public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
@@ -25,9 +27,10 @@ public class BeerServiceImpl implements BeerService {
         this.beerRepository = beerRepository;
         this.beerMapper = beerMapper;
     }
-
+    @Cacheable(value = "beerCache",key ="#beerId" ,condition = "!#showInventoryOnHand")
     @Override
     public BeerDto getById(UUID beerId,Boolean showInventoryOnHand) {
+        System.out.println("i was called");
         if (showInventoryOnHand) {
            return beerMapper.beerToBeerDtoWithInventory(beerRepository.findById(String.valueOf(beerId)).orElseThrow(NotFoundException::new));
         }
@@ -51,9 +54,11 @@ public class BeerServiceImpl implements BeerService {
     public void deleteBeerById(UUID beerId) {
         beerRepository.deleteById(String.valueOf(beerId));
     }
+    @Cacheable(value = "beerListCache" ,condition = "!#showInventoryOnHand")
 
     @Override
     public BeerPagedList getBeerList(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, Boolean showInventoryOnHand) {
+        System.out.println("i was called");
         BeerPagedList beerPagedList;
         Page<Beer> beerPage;
         if(!Objects.isNull(beerName) && !Objects.isNull(beerStyle)) {

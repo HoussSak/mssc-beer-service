@@ -12,6 +12,7 @@
 /Users/55154M/IdeaProjects/microservices/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/mappers/BeerMapper.java
 /Users/55154M/IdeaProjects/microservices/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/controller/BeerController.java
 /Users/55154M/IdeaProjects/microservices/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/model/BeerStyleEnum.java
+/Users/55154M/IdeaProjects/microservices/mssc-beer-service/src/main/java/config/CacheConfig.java
 /Users/55154M/IdeaProjects/microservices/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/model/BeerPagedList.java
 /Users/55154M/IdeaProjects/microservices/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/controller/MvcExceptionHandler.java
 /Users/55154M/IdeaProjects/microservices/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/services/inventory/model/BeerInventoryDto.java
