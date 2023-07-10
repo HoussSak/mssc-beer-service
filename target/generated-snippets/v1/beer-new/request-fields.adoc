@@ -4,7 +4,7 @@
 |beerName
 |String
 |Name of the beer
-|Must not be blank. Size must be between 3 and 100 inclusive
+|Must not be blank
 
 |beerStyle
 |String

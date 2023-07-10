@@ -18,9 +18,9 @@ import java.util.UUID;
 @Table(name = "BEER")
 public class Beer {
     @Id
-    @GeneratedValue(generator = "UUID")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false )
-    private UUID id;
+    @GeneratedValue
+    @Column(length = 36, updatable = false, nullable = false)
+    private String id;
 
     private String beerName;
     private String beerStyle;

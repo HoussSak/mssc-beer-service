@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import guru.springframework.msscbeerservice.bootstrap.BeerLoader;
 import guru.springframework.msscbeerservice.services.BeerService;
+import guru.springframework.msscbeerservice.services.inventory.BeerInventoryService;
 import guru.springframework.msscbeerservice.web.model.BeerDto;
 import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(RestDocumentationExtension.class)
 @AutoConfigureRestDocs(uriScheme = "https", uriHost = "dev.springframework.guru",uriPort = 80)
 @WebMvcTest(BeerController.class)
-@ComponentScan(basePackages = "guru.springframework.msscbeerservice.web.mappers")
 class BeerControllerTest {
     @Autowired
     MockMvc mockMvc;
@@ -45,6 +45,7 @@ class BeerControllerTest {
     ObjectMapper objectMapper;
     @MockBean
     BeerService beerService;
+
 
     @Test
     void getBeerById() throws Exception {
