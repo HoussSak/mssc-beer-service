@@ -5,7 +5,6 @@ import guru.springframework.msscbeerservice.services.inventory.BeerInventoryServ
 import guru.springframework.msscbeerservice.web.model.BeerDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 
 
 import java.util.UUID;
