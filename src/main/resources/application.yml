@@ -2,7 +2,7 @@ spring:
   application:
     name: beer-service
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:testdb;MODE=MYSQL
   h2:
     console:
       enabled: true
