@@ -3,6 +3,7 @@
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/model/BeerDto.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/model/BeerPagedList.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/services/inventory/BeerInventoryService.java
+/Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/config/CacheConfig.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/model/BeerStyleEnum.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/repositories/BeerRepository.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/utils/LocalDateDeserializer.java
@@ -15,7 +16,6 @@
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/services/BeerServiceImpl.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/MsscBeerServiceApplication.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/mappers/DateMapper.java
-/Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/config/CacheConfig.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/web/mappers/BeerMapper.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/services/inventory/model/BeerInventoryDto.java
 /Users/55154M/IdeaProjects/mssc-brewery-ws/mssc-beer-service/src/main/java/guru/springframework/msscbeerservice/domain/Beer.java

@@ -18,9 +18,10 @@ import java.util.UUID;
 @Table(name = "BEER")
 public class Beer {
     @Id
-    @GeneratedValue
-    @Column(length = 36, updatable = false, nullable = false)
-    private String id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
 
     private String beerName;
     private String beerStyle;

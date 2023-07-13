@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: beer-service
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MYSQL
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+
+sfg:
+  brewery:
+    beer-inventory-service-host: http://localhost:8082
+    inventory-user: good
+    inventory-password: beer
+
+
+spring.cache.type: simple
+spring.cache.cache-names: beerCache, beerUpcCache, beerListCache
+spring.cache.caffeine.spec: maximumSize=1000,expireAfterWrite=7d
+spring.data.jpa.repositories.bootstrap-mode: default
+spring.artemis.user: artemis
+spring.artemis.password: simetraehcapa
+spring.zipkin.enabled: false
+logging.level.guru.springframework: debug

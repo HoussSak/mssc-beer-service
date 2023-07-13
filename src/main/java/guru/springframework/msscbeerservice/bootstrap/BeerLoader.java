@@ -3,6 +3,7 @@ package guru.springframework.msscbeerservice.bootstrap;
 import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -11,9 +12,11 @@ import java.util.UUID;
 //@Component
 public class BeerLoader implements CommandLineRunner {
     public static final String BEER_1_UPC = "0631234200036";
-    public static final String BEER_2_UPC = "0631234200043";
+    public static final String BEER_2_UPC = "0641234200043";
     public static final String BEER_3_UPC = "0081234200013";
     public static final UUID BEER_1_UUID = UUID.fromString("0a818933-087d-47f2-ad83-2f986ed087eb");
+    public static final UUID BEER_2_UUID = UUID.fromString("a712d914-61ea-4623-8bd0-32c0f6545bfd");
+    public static final UUID BEER_3_UUID = UUID.fromString("026cc3c8-3a0c-4083-a05b-e908048c1b08");
     private final BeerRepository beerRepository;
 
     public BeerLoader(BeerRepository beerRepository) {
@@ -22,11 +25,14 @@ public class BeerLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        loadBeerObjects();
+        if(beerRepository.findAll(Pageable.unpaged()).stream().findAny().isEmpty()){
+            loadBeerObjects();
+        }
     }
     private void loadBeerObjects() {
             beerRepository.save(
                     Beer.builder()
+                            .id(BEER_1_UUID)
                             .beerName("Mango Bobs")
                             .beerStyle("IPA")
                             .quantityToBrew(200)
@@ -37,8 +43,9 @@ public class BeerLoader implements CommandLineRunner {
 
             beerRepository.save(
                     Beer.builder()
+                            .id(BEER_2_UUID)
                             .beerName("Galaxy Cat")
-                            .beerStyle("PALE ALE")
+                            .beerStyle("PALE_ALE")
                             .quantityToBrew(200)
                             .minOnHand(12)
                             .upc(BEER_2_UPC)
@@ -47,8 +54,9 @@ public class BeerLoader implements CommandLineRunner {
 
             beerRepository.save(
                     Beer.builder()
+                            .id(BEER_3_UUID)
                             .beerName("No Hammers On The Bar")
-                            .beerStyle("PALE ALE")
+                            .beerStyle("PALE_ALE")
                             .quantityToBrew(200)
                             .minOnHand(12)
                             .upc(BEER_3_UPC)

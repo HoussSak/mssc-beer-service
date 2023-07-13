@@ -10,6 +10,7 @@ guru/springframework/msscbeerservice/domain/Beer.class
 guru/springframework/msscbeerservice/services/inventory/model/BeerInventoryDto.class
 guru/springframework/msscbeerservice/web/model/BeerPagedList.class
 guru/springframework/msscbeerservice/services/inventory/BeerInventoryServiceRestTemplate.class
+guru/springframework/msscbeerservice/config/CacheConfig.class
 guru/springframework/msscbeerservice/web/model/BeerJson$BeerJsonBuilder.class
 guru/springframework/msscbeerservice/utils/LocalDateDeserializer.class
 guru/springframework/msscbeerservice/MsscBeerServiceApplication.class
@@ -23,7 +24,6 @@ guru/springframework/msscbeerservice/web/model/BeerDto$BeerDtoBuilder.class
 guru/springframework/msscbeerservice/utils/LocalDateSerializer.class
 guru/springframework/msscbeerservice/services/inventory/model/BeerInventoryDto$BeerInventoryDtoBuilder.class
 guru/springframework/msscbeerservice/services/inventory/BeerInventoryServiceRestTemplate$1.class
-config/CacheConfig.class
 guru/springframework/msscbeerservice/web/mappers/BeerMapper.class
 guru/springframework/msscbeerservice/services/inventory/BeerInventoryService.class
 guru/springframework/msscbeerservice/web/mappers/BeerMapperImpl.class
