@@ -1,14 +1,13 @@
 package guru.springframework.msscbeerservice.events;
 
 import guru.springframework.msscbeerservice.web.model.BeerDto;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data
-@RequiredArgsConstructor
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BeerEvent {
 
-    private final BeerDto beerDto;
+    private BeerDto beerDto;
 }
