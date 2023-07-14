@@ -27,3 +27,4 @@ guru/springframework/msscbeerservice/services/inventory/BeerInventoryServiceRest
 guru/springframework/msscbeerservice/web/mappers/BeerMapper.class
 guru/springframework/msscbeerservice/services/inventory/BeerInventoryService.class
 guru/springframework/msscbeerservice/web/mappers/BeerMapperImpl.class
+guru/springframework/msscbeerservice/config/JmsConfig.class
